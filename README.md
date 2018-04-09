@@ -121,6 +121,16 @@ chsh -s $(which zsh)
 
 
 
+#### Patched Font
+
+```bash
+mkdir ~/.fonts
+sudo cp -a fonts/. ~/.fonts/
+fc-cache -vf ~/.fonts/
+```
+
+
+
 #### Tmux
 
 #### Color Theme
