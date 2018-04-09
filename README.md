@@ -79,7 +79,47 @@ Download and install MiniConda from the official page [here](https://conda.io/mi
 
 #### Powerline
 
+```bash
+# Make sure you have Python PIP installed.
+sudo apt-get install python-pip
+
+# Install Powerline.
+pip install --user powerline-status
+
+# Copy the config file so that Powerline is active in VIM.
+sudo cp configs/.vimrc ~/.vimrc
+```
+
+
+
 #### ZSH
+
+```bash
+# Install pre-requisites.
+sudo apt install git-core zsh
+
+# Install OhMyZSH from the repo.
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# Install Powerline fonts via CLI.
+sudo apt-get install fonts-powerline
+
+# Clone the plugins: auto-comlete and syntax highlights.
+(cd ~/.oh-my-zsh/custom/plugins && git clone https://github.com/zsh-users/zsh-syntax-highlighting)
+(cd ~/.oh-my-zsh/custom/plugins && git clone https://github.com/zsh-users/zsh-autosuggestions)
+
+# Copy my config files over.
+# The config changes theme to Agnoster, and also some colors.
+sudo cp configs/.zshrc ~/.zshrc
+sudo cp configs/agnoster.zsh-theme ~/.oh-my-zsh/themes/agnoster.zsh-theme
+
+# Change the main shell to ZSH
+chsh -s $(which zsh)
+
+# Reboot the machine for these changes to take effect.
+```
+
+
 
 #### Tmux
 
