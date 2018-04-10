@@ -133,7 +133,28 @@ fc-cache -vf ~/.fonts/
 
 #### Tmux
 
+```bash
+sudo apt-get install tmux
+
+# Copy the config files.
+sudo cp configs/.tmux.conf ~/
+sudo cp configs/.tmux.conf.local ~/
+```
+
+
+
 #### Color Theme
+
+```bash
+# Get the dconf tool.
+sudo apt-get install dconf-tools
+
+# Install the color theme.
+dconf load /org/gnome/terminal/legacy/profiles:/:b7266f75-b49b-4c90-966c-e39c32f37edb/ < configs/ai_profile.dconf
+bash cmd/add_profile.sh
+
+# Now you need to set the terminal to use this default theme.
+```
 
 
 
@@ -146,3 +167,11 @@ fc-cache -vf ~/.fonts/
 #### CUDNN
 
 #### PyTorch
+
+
+
+## Sources
+
+##### [.tmux: Oh My Tmux!](https://github.com/gpakosz/.tmux)
+
+##### [Oh My Zsh!](https://medium.com/wearetheledger/oh-my-zsh-made-for-cli-lovers-installation-guide-3131ca5491fb)

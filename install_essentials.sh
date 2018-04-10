@@ -18,3 +18,12 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE
 sudo add-apt-repository 'deb https://typora.io ./linux/'
 sudo apt-get update
 sudo apt-get install typora
+
+# Install PyCharm
+sudo add-apt-repository ppa:mystic-mirage/pycharm
+sudo apt-get update
+sudo apt-get install pycharm-community
+
+# Install Kraken
+wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
+sudo dpkg -i gitkraken-amd64.deb
