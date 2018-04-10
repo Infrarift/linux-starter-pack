@@ -1,0 +1,14 @@
+[/]
+foreground-color='rgb(143,255,174)'
+visible-name='AI'
+palette=['rgb(44,62,80)', 'rgb(192,57,43)', 'rgb(42,252,88)', 'rgb(255,185,82)', 'rgb(41,128,185)', 'rgb(142,68,173)', 'rgb(5,160,126)', 'rgb(189,195,199)', 'rgb(62,81,99)', 'rgb(255,96,79)', 'rgb(139,255,145)', 'rgb(255,225,105)', 'rgb(81,185,255)', 'rgb(216,121,255)', 'rgb(104,247,137)', 'rgb(255,255,255)']
+use-system-font=false
+use-transparent-background=true
+use-theme-colors=false
+font='Roboto Mono for Powerline 13'
+use-theme-transparency=false
+use-theme-background=false
+bold-color-same-as-fg=true
+bold-color='#bdbdc3c3c7c7'
+background-color='rgb(5,29,52)'
+background-transparency-percent=9
