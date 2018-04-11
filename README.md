@@ -110,8 +110,8 @@ sudo apt-get install fonts-powerline
 
 # Copy my config files over.
 # The config changes theme to Agnoster, and also some colors.
-sudo cp configs/.zshrc ~/.zshrc
-sudo cp configs/agnoster.zsh-theme ~/.oh-my-zsh/themes/agnoster.zsh-theme
+sudo cp configs/.zshrc ~/
+sudo cp configs/agnoster.zsh-theme ~/.oh-my-zsh/themes/
 
 # Change the main shell to ZSH
 chsh -s $(which zsh)
@@ -175,7 +175,7 @@ sudo add-apt-repository ppa:graphics-drivers
 sudo apt-get update
 
 # Install the desired driver version. Replace the number here.
-sudo apt-get install nvidia-384
+sudo apt-get install nvidia-390
 ```
 
 Once that is done, you should reboot the machine. You can then check if the drivers are installed properly.
