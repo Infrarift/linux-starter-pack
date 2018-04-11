@@ -96,7 +96,7 @@ sudo cp configs/.vimrc ~/.vimrc
 
 ```bash
 # Install pre-requisites.
-sudo apt install git-core zsh
+sudo apt install git-core zsh curl
 
 # Install OhMyZSH from the repo.
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -126,6 +126,7 @@ chsh -s $(which zsh)
 ```bash
 mkdir ~/.fonts
 sudo cp -a fonts/. ~/.fonts/
+(cd fonts && sudo sh install.sh)
 fc-cache -vf ~/.fonts/
 ```
 
