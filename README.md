@@ -152,7 +152,7 @@ sudo cp configs/.tmux.conf.local ~/
 sudo apt-get install dconf-tools
 
 # Install the color theme.
-dconf load /org/gnome/terminal/legacy/profiles:/:b7266f75-b49b-4c90-966c-e39c32f37edb/ < configs/ai_profile.dconf
+dconf load /org/gnome/terminal/legacy/profiles:/:fb358fc9-49ea-4252-ad34-1d25c649e633/ < configs/terminal_profile.dconf
 bash cmd/add_profile.sh
 ```
 
