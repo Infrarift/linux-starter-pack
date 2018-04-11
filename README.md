@@ -1,5 +1,6 @@
 # Linux Starter Pack
-When I reformat a new Linux machine, these are the tools I want to start with. The installation should take about 2 hours, depending on internet speed.
+
+When I reformat a new Linux machine, these are the tools I want to start with. The installation should take about 2 hours, depending on internet speed. This pack also assumes that you are running Ubuntu 16.04.
 
 
 
@@ -192,9 +193,13 @@ nvidia-smi
 
 I will use the 9.0 version because that is currently supported by Tensorflow and PyTorch. 9.1 might still be a bit too new. Follow the instructions from [NVidia's CUDA page](https://developer.nvidia.com/cuda-90-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1604).
 
+
+
 #### [CUDNN](http://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html)
 
 We need CUDNN for convolutions. Follow the instructions [here](http://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html).
+
+
 
 #### [PyTorch](http://pytorch.org/)
 
@@ -203,6 +208,56 @@ Configure the line according to which Python and CUDA version you want to use. *
 ```bash
 pip3 install http://download.pytorch.org/whl/cu91/torch-0.3.1-cp36-cp36m-linux_x86_64.whl 
 pip3 install torchvision
+```
+
+
+
+#### [Docker CE](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository)
+
+Docker will be installed via the repostiroy method. Visit the link above for the official, up to date instructions. I've also pasted them below because I'm lazy and want everything in one place.
+
+Get the dependencies.
+
+```bash
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+```
+
+Add the official GPG key.
+
+```bash
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+```
+
+Use this to check if it was added successfully.
+
+```bash
+sudo apt-key fingerprint 0EBFCD88
+```
+
+Set up the stable repository.
+
+```bash
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+```
+
+Finally, install Docker CE.
+
+```bash
+# Update the cache.
+sudo apt-get update
+
+# Install Docker.
+sudo apt-get install docker-ce
+
+# Test the installation.
+sudo docker run hello-world
 ```
 
 
