@@ -188,11 +188,22 @@ nvidia-smi
 
 
 
-#### CUDA
+#### CUDA 9.0
 
-#### CUDNN
+I will use the 9.0 version because that is currently supported by Tensorflow and PyTorch. 9.1 might still be a bit too new. Follow the instructions from [NVidia's CUDA page](https://developer.nvidia.com/cuda-90-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1604).
 
-#### PyTorch
+#### [CUDNN](http://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html)
+
+We need CUDNN for convolutions. Follow the instructions [here](http://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html).
+
+#### [PyTorch](http://pytorch.org/)
+
+Configure the line according to which Python and CUDA version you want to use. **Also, use the pip installer.** The conda one seems to break TensorFlow in the environments that I have tested.
+
+```bash
+pip3 install http://download.pytorch.org/whl/cu91/torch-0.3.1-cp36-cp36m-linux_x86_64.whl 
+pip3 install torchvision
+```
 
 
 
