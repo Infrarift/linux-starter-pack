@@ -1,5 +1,5 @@
 # Linux Starter Pack
-When I reformat a new Linux machine, these are the tools I want to start with.
+When I reformat a new Linux machine, these are the tools I want to start with. The installation should take about 2 hours, depending on internet speed.
 
 
 
@@ -62,9 +62,9 @@ sudo apt-get install pycharm-community
 
 GitKraken is my preferred GUI for Git.
 
-```
+```bash
 wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
-dpkg -i gitkraken-amd64.deb
+sudo dpkg -i gitkraken-amd64.deb
 ```
 
 
@@ -152,8 +152,6 @@ sudo apt-get install dconf-tools
 # Install the color theme.
 dconf load /org/gnome/terminal/legacy/profiles:/:b7266f75-b49b-4c90-966c-e39c32f37edb/ < configs/ai_profile.dconf
 bash cmd/add_profile.sh
-
-# Now you need to set the terminal to use this default theme.
 ```
 
 
@@ -161,6 +159,33 @@ bash cmd/add_profile.sh
 ## AI
 
 #### Nvidia Drivers
+
+First, you need to know what GPU device you have. For example, GTX 1060. Then you can use the link below to check for which driver to use.
+
+- [Go here to find a list of all the available drivers.](https://launchpad.net/~graphics-drivers/+archive/ubuntu/ppa)
+- [Check Nvidia for driver compatibility with your GPU.](http://www.nvidia.com/object/unix.html)
+
+```bash
+# Clean out any current Nvidia files.
+sudo apt-get purge nvidia*
+
+# Add the PPA repo and update.
+sudo add-apt-repository ppa:graphics-drivers
+sudo apt-get update
+
+# Install the desired driver version. Replace the number here.
+sudo apt-get install nvidia-384
+```
+
+Once that is done, you should reboot the machine. You can then check if the drivers are installed properly.
+
+```bash
+# Both of these commands should show information about the driver.
+lsmod | grep nvidia
+nvidia-smi
+```
+
+
 
 #### CUDA
 
@@ -172,6 +197,4 @@ bash cmd/add_profile.sh
 
 ## Sources
 
-##### [.tmux: Oh My Tmux!](https://github.com/gpakosz/.tmux)
-
-##### [Oh My Zsh!](https://medium.com/wearetheledger/oh-my-zsh-made-for-cli-lovers-installation-guide-3131ca5491fb)
+[.tmux: Oh My Tmux!](https://github.com/gpakosz/.tmux) | [Oh My Zsh!](https://medium.com/wearetheledger/oh-my-zsh-made-for-cli-lovers-installation-guide-3131ca5491fb) | [Robby Russel OMZ](https://github.com/robbyrussell/oh-my-zsh) | [Install Powerline](https://askubuntu.com/questions/283908/how-can-i-install-and-use-powerline-plugin) | [Powerline Patched Fonts](https://github.com/powerline/fonts) | [Getting Started with Tmux](https://lukaszwrobel.pl/blog/tmux-tutorial-split-terminal-windows-easily/)
