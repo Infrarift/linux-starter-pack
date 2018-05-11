@@ -4,7 +4,7 @@ pip install --user powerline-status
 sudo cp configs/.vimrc ~/.vimrc
 
 # Install ZSH
-sudo apt install git-core zsh
+sudo apt install git-core zsh curl
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 sudo apt-get install fonts-powerline
 (cd ~/.oh-my-zsh/custom/plugins && git clone https://github.com/zsh-users/zsh-syntax-highlighting)
