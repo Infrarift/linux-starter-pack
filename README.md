@@ -23,6 +23,12 @@ sudo apt-get install git
 sudo apt-get install vim
 ```
 
+#### Status Bar: Indicator Multiload
+
+```bash
+sudo apt install indicator-multiload
+```
+
 #### [Chrome](https://www.google.com/chrome/)
 
 ```bash

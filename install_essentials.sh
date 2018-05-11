@@ -7,6 +7,9 @@ sudo apt-get install git
 # Install Vim.
 sudo apt-get install vim
 
+# Install multi-load indicator.
+sudo apt install indicator-multiload
+
 # Install Chrome
 sudo apt-get install libxss1 libappindicator1 libindicator7
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
