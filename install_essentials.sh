@@ -2,13 +2,13 @@ sudo apt-get update
 sudo apt-get upgrade
 
 # Install Git.
-sudo apt-get install git
+sudo apt-get install -y git
 
 # Install Vim.
-sudo apt-get install vim
+sudo apt-get install -y vim
 
 # Install multi-load indicator.
-sudo apt install indicator-multiload
+sudo apt install -y indicator-multiload
 
 # Install Chrome
 sudo apt-get install libxss1 libappindicator1 libindicator7
@@ -20,12 +20,12 @@ sudo dpkg -i google-chrome*.deb
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE
 sudo add-apt-repository 'deb https://typora.io ./linux/'
 sudo apt-get update
-sudo apt-get install typora
+sudo apt-get install -y typora
 
 # Install PyCharm
 sudo add-apt-repository ppa:mystic-mirage/pycharm
 sudo apt-get update
-sudo apt-get install pycharm-community
+sudo apt-get install -y pycharm-community
 
 # Install Kraken
 wget https://release.gitkraken.com/linux/gitkraken-amd64.deb

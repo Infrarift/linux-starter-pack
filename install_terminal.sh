@@ -1,12 +1,12 @@
 # Install Powerline for VIM.
-sudo apt-get install python-pip
+sudo apt-get install -y python-pip
 pip install --user powerline-status
 sudo cp configs/.vimrc ~/.vimrc
 
 # Install ZSH
-sudo apt install git-core zsh curl
+sudo apt install -y git-core zsh curl
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-sudo apt-get install fonts-powerline
+sudo apt-get install -y fonts-powerline
 (cd ~/.oh-my-zsh/custom/plugins && git clone https://github.com/zsh-users/zsh-syntax-highlighting)
 (cd ~/.oh-my-zsh/custom/plugins && git clone https://github.com/zsh-users/zsh-autosuggestions)
 sudo cp configs/.zshrc ~/.zshrc
@@ -20,7 +20,7 @@ sudo cp -a fonts/. ~/.fonts/
 fc-cache -vf ~/.fonts/
 
 # Install Tmux
-sudo apt-get install tmux
+sudo apt-get install -y tmux
 sudo cp configs/.tmux.conf ~/
 sudo cp configs/.tmux.conf.local ~/
 
