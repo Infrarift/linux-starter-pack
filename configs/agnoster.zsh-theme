@@ -79,9 +79,7 @@ prompt_end() {
 
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
-  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER@%m"
-  fi
+  prompt_segment 008 010 "%(!.%{%F{yellow}%}.)%n"
 }
 
 # Git: branch/detached head, dirty status
@@ -187,14 +185,13 @@ prompt_hg() {
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment 008 010 $(basename `pwd`) 
+  # prompt_segment 008 010 $(basename `pwd`) 
 }
 
 # Virtualenv: current working virtualenv
 prompt_virtualenv() {
-  local virtualenv_path="$VIRTUAL_ENV"
-  if [[ -n $virtualenv_path && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
-    prompt_segment blue black "(`basename $virtualenv_path`)"
+  if [[ -n $CONDA_PROMPT_MODIFIER ]]; then
+    prompt_segment black default ${CONDA_PROMPT_MODIFIER:1:-2}
   fi
 }
 
@@ -212,13 +209,19 @@ prompt_status() {
   [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
 }
 
+prompt_head() {
+  echo "\r               "  # Clear prevous line
+  echo "\r %{%F{8}%}[%64<..<%~%<<]"  # Print Dir.
+}
+
 ## Main prompt
 build_prompt() {
   RETVAL=$?
+  prompt_head
   prompt_status
   prompt_virtualenv
-  #  prompt_context
-  prompt_dir
+  prompt_context
+  # prompt_dir
   prompt_git
   prompt_bzr
   prompt_hg
