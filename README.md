@@ -100,6 +100,23 @@ How to dump current terminal profiles.
 dconf dump /org/gnome/terminal/legacy/profiles:/ > gnome-terminal-profiles.dconf
 ```
 
+```
+ VERSION=v12.18.2
+ DISTRO=linux-x64
+ sudo mkdir -p /usr/local/lib/nodejs
+ sudo tar -xJvf node-$VERSION-$DISTRO.tar.xz -C /usr/local/lib/nodejs 
+```
+
+```
+# Nodejs
+VERSION=v12.18.2
+DISTRO=linux-x64
+export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
+
+# Symlink to default
+sudo ln -s /usr/local/lib/nodejs/bin/node /usr/bin/node
+```
+
 
 
 ## Sources
