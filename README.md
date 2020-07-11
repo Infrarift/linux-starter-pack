@@ -101,23 +101,23 @@ dconf dump /org/gnome/terminal/legacy/profiles:/ > gnome-terminal-profiles.dconf
 ```
 
 ```
- VERSION=v12.18.2
- DISTRO=linux-x64
- sudo mkdir -p /usr/local/lib/nodejs
- sudo tar -xJvf node-$VERSION-$DISTRO.tar.xz -C /usr/local/lib/nodejs 
+VERSION=v12.18.2
+DISTRO=linux-x64
+sudo mkdir -p /usr/local/lib/nodejs
+sudo tar -xJvf node-$VERSION-$DISTRO.tar.xz -C /usr/local/lib/nodejs 
+
+# Symlink to default
+sudo ln -s /usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin/node /usr/bin/node
+sudo ln -s /usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin/npm /usr/bin/npm
+sudo ln -s /usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin/npx /usr/bin/npx
 ```
 
 ```
-# Nodejs
+# Add this to zsh
 VERSION=v12.18.2
 DISTRO=linux-x64
 export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
-
-# Symlink to default
-sudo ln -s /usr/local/lib/nodejs/bin/node /usr/bin/node
 ```
-
-
 
 ## Sources
 
