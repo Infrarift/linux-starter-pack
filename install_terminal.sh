@@ -2,8 +2,8 @@
 sudo apt install -y vim
 
 # Install Powerline for VIM.
-sudo apt install -y python-pip
-pip install --user powerline-status
+sudo apt install -y python3-pip
+pip3 install --user powerline-status
 sudo cp configs/.vimrc ~/.vimrc
 
 # Install ZSH
